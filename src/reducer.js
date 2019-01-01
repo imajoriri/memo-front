@@ -3,6 +3,7 @@ import action from "./actions/action";
 const initialState = {
   memoWriteLevel: 1,
   memo: "",
+  memoList: []
 } 
 
 function reducer(state = initialState, act) {
@@ -23,6 +24,13 @@ function reducer(state = initialState, act) {
       return Object.assign({},state, {
         memo: act.memo,
       });
+
+    // memoList
+    case action.FETCH_DATA:
+      return Object.assign({},state, {
+        memoList: act.memoList,
+      });
+
 
     default:
       return state;

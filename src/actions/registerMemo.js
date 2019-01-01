@@ -3,7 +3,7 @@ import store from "./../store";
 import { firebaseDb } from "./../firebase";
 
 export default {
-  onChange: (e) => {
+  onChange: async (e) => {
     return {
       type: action.INPUT_MEMO,
       memo: e.target.value,
@@ -11,7 +11,7 @@ export default {
   },
 
   // プラスボタンが押された時。
-  plusLevel: (e) => {
+  plusLevel: async (e) => {
     var memoWriteLevel = store.getState().memoWriteLevel
 
     var newMemoWriteLevel;
@@ -28,7 +28,7 @@ export default {
   },
 
   // マイナスボタンが押された時
-  minusLevel: (e) => {
+  minusLevel: async (e) => {
     var memoWriteLevel = store.getState().memoWriteLevel
 
     var newMemoWriteLevel;
@@ -46,7 +46,7 @@ export default {
 
   // 送信ボタンが押された時。
   // 入力フォームは空にする
-  sendMemo: (e) => {
+  sendMemo: async (e) => {
     // 現在の日にちのメモを取得。なかったら作成。
     var now = new Date();  
     // 日にちのKey
@@ -63,12 +63,14 @@ export default {
 
     var state = store.getState();
 
-    // DBに保存
-    firebaseDb.child(todayKey).child(timeKey).set({
-      memo: state.memo,
-      level: state.memoWriteLevel,
-      timeKey: timeKey,
-    })
+    if(state.memo){
+      // DBに保存
+      firebaseDb.child(todayKey).child(timeKey).set({
+        memo: state.memo,
+        level: state.memoWriteLevel,
+        timeKey: timeKey,
+      })
+    }
 
     return{
       type: action.SEND_MEMO,

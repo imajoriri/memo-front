@@ -2,4 +2,6 @@ export default {
   INPUT_MEMO: "INPUT_MEMO",
   PLUS_LEVEL: "PLUS_LEVEL",
   SEND_MEMO: "SEND_MEMO",
+
+  FETCH_DATA: "FETCH_DATA",
 }
