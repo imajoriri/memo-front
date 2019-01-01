@@ -2,11 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Grid, Row, Col } from 'react-bootstrap';
 
-var buttonStyle = {
-  border: "black solid 1px",
-  backgroundColor: "white",
-  width: "100%",
-  height: "40px",
+var buttonStyle = (key) => {
+  var result = {
+    border: "black solid 1px",
+    backgroundColor: "white",
+    width: "100%",
+    height: "40px",
+  }
+  if(key !== 3){
+    result.borderRight = "none"
+  }
+  return result;
 }
 
 var colStyle = {
@@ -22,13 +28,13 @@ class LevelSelectButton extends Component{
       <div>
         <Row>
           <Col xs="4" style={colStyle}>
-            <button style={buttonStyle}>1</button>
+            <button style={buttonStyle(1)}>1</button>
           </Col>
           <Col xs="4" style={colStyle}>
-            <button style={buttonStyle}>2</button>
+            <button style={buttonStyle(2)}>2</button>
           </Col>
           <Col xs="4" style={colStyle}>
-            <button style={buttonStyle}>3</button>
+            <button style={buttonStyle(3)}>3</button>
           </Col>
         </Row>
       </div>
