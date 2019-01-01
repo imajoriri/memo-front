@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Row, Col } from 'react-bootstrap';
 
+import registerMemo from "./../actions/registerMemo";
+
 var buttonStyle = {
   border: "black solid 1px",
   backgroundColor: "white",
@@ -16,7 +18,7 @@ class SendButton extends Component{
 
   render(){
     return(
-      <button style={buttonStyle} >send</button>
+      <button style={buttonStyle} onClick={e => this.props.sendMemo(e)}>send</button>
     )
   }
 }
@@ -27,6 +29,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    sendMemo: (e) => dispatch(registerMemo.sendMemo(e))
   }
 }
 

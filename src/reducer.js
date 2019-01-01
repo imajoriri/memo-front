@@ -19,6 +19,10 @@ function reducer(state = initialState, act) {
         memoWriteLevel: act.newMemoWriteLevel
       });
 
+    case action.SEND_MEMO:
+      return Object.assign({},state, {
+        memo: act.memo,
+      });
 
     default:
       return state;
