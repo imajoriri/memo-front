@@ -33,13 +33,13 @@ class App extends Component {
           {/* 画面上のメモレベル変更の丸いボタン */}
           <Row style={LevelShiftGroupStyle} className="LevelShiftGroup">
             <Col md={6} xs={4}>
-              <LevelShiftButton />
+              <LevelShiftButton isPlusButton={false}/>
             </Col>
             <Col xs={4}>
               <LevelCircle />
             </Col>
             <Col md={6} xs={4} >
-              <LevelShiftButton />
+              <LevelShiftButton isPlusButton={true}/>
             </Col>
           </Row>
 

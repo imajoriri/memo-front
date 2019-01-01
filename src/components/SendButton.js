@@ -22,7 +22,7 @@ class SendButton extends Component{
 }
 
 const mapStateToProps = state => {
-  return state;
+  return { state }
 }
 
 const mapDispatchToProps = dispatch => {

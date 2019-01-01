@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import registerMemo from "./../actions/registerMemo";
 
 var buttonStyle = {
   backgroundColor: "white",
@@ -15,9 +16,16 @@ class LevelShiftButton extends Component {
   };
 
   render(){
+    var onClick;
+    if(this.props.isPlusButton){
+      onClick = this.props.plusLevel;
+    }else{
+      onClick = this.props.minusLevel;
+    }
+  
     return(
       <div>
-        <button style={buttonStyle}>plus</button>
+        <button style={buttonStyle} onClick={e => onClick(e)}>plus</button>
       </div>
     )
   }
@@ -28,6 +36,8 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = dispatch => {
   return {
+    plusLevel: e => dispatch(registerMemo.plusLevel(e)),
+    minusLevel: e => dispatch(registerMemo.minusLevel(e)),
   }
 };
 

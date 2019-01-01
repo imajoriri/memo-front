@@ -1,14 +1,28 @@
-import act from "./actions/action";
+import action from "./actions/action";
 
 const initialState = {
-  text: "default"
+  memoWriteLevel: 1,
+  memo: "",
 } 
 
-function reducer(state = initialState, action) {
-  // そのままstateを変更はできない
-  switch (action.type) {
+function reducer(state = initialState, act) {
+
+  switch (act.type) {
+
+    case action.INPUT_MEMO:
+      return Object.assign({},state, {
+        memo: act.memo
+      });
+
+    case action.PLUS_LEVEL:
+      return Object.assign({},state, {
+        memoWriteLevel: act.newMemoWriteLevel
+      });
+
+
     default:
       return state;
   }
+
 }
 export default reducer;
