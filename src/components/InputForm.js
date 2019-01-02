@@ -5,8 +5,8 @@ import { Row, Col } from 'react-bootstrap';
 import registerMemo from "./../actions/registerMemo";
 
 var inputStyle = {
-  border: "black solid 1px",
-  borderRadius: "10px",
+  border: "#B3B3B3 solid 1px",
+  borderRadius: "15px",
   width: "100%",
   height: "150px",
   padding: "5px",

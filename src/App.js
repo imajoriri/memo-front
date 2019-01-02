@@ -3,6 +3,7 @@ import { Grid, Row, Col } from 'react-bootstrap';
 
 import LevelShiftButton from "./components/LevelShiftButton";
 import LevelCircle from "./components/LevelCircle";
+import LevelLine from "./components/LevelLine";
 import InputForm from "./components/InputForm";
 import SendButton from "./components/SendButton";
 import LevelSelectButton from "./components/LevelSelectButton";
@@ -36,7 +37,7 @@ class App extends Component {
               <LevelShiftButton isPlusButton={false}/>
             </Col>
             <Col xs={4}>
-              <LevelCircle />
+              <LevelLine />
             </Col>
             <Col md={6} xs={4} >
               <LevelShiftButton isPlusButton={true}/>

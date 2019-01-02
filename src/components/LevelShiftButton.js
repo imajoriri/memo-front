@@ -2,12 +2,21 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import registerMemo from "./../actions/registerMemo";
 
+import plusButton from "./../images/plus_button.png";
+import minusButton from "./../images/minus_button.png";
+
 var buttonStyle = {
-  backgroundColor: "white",
-  width: "50px",
-  height: "50px",
-  border: "1px black solid",
-  borderRadius: "50%",
+  //backgroundColor: "#00DC94",
+  //border: "1px white solid",
+  //borderRadius: "50%",
+  width: "60px",
+  height: "60px",
+
+}
+
+var buttonImageStyle = {
+  width: "60px",
+  height: "60px",
 }
 
 class LevelShiftButton extends Component {
@@ -22,10 +31,12 @@ class LevelShiftButton extends Component {
     }else{
       onClick = this.props.minusLevel;
     }
-  
+
+    var imgSrc = this.props.isPlusButton ? plusButton : minusButton
+
     return(
       <div>
-        <button style={buttonStyle} onClick={e => onClick(e)}>plus</button>
+        <img src={imgSrc} style={buttonImageStyle} onClick={e => onClick(e)}/>
       </div>
     )
   }

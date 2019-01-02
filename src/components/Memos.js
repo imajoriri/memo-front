@@ -8,11 +8,19 @@ var memoDivStyle = {
   margin: "10px 0px",
 }
 
-var memoStyle = {
-  border: "black 1px solid",
-  borderBottom: "none",
-  padding: "5px",
-  margin: "0px",
+const memoStyle = isLast => {
+  var style = {
+    border: "black solid 1px",
+    borderBottom: "none",
+    padding: "5px",
+    margin: "0px",
+  }
+
+  if(isLast){
+    style.borderBottom = "black solid 1px"
+  }
+
+  return style;
 }
 
 class Memos extends Component {
@@ -56,7 +64,11 @@ class Memos extends Component {
           return <span key={i}>{m}<br /></span>
         });
 
-        return <p style={memoStyle} key={i}>{tmp}</p>
+        if(i === memoList.length - 1){
+          return <p style={memoStyle(true)} key={i}>{tmp}</p>
+        }else{
+          return <p style={memoStyle(false)} key={i}>{tmp}</p>
+        }
       }
 
     });
