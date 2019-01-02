@@ -28,7 +28,7 @@ class App extends Component {
   render() {
     return (
       <div style={allGroupStyle}>
-        <Grid fluid="true">
+        <Grid fluid={true}>
 
           {/* 画面上のメモレベル変更の丸いボタン */}
           <Row style={LevelShiftGroupStyle} className="LevelShiftGroup">
@@ -50,10 +50,10 @@ class App extends Component {
 
           {/* 表示するメモのレベル変更ボタン */}
           <Row className="ButtonGroup">
-            <Col xs="8">
+            <Col xs={8}>
                 <LevelSelectButton />
             </Col>
-            <Col xs="4" style={SendButtonColStyle}>
+            <Col xs={4} style={SendButtonColStyle}>
               <SendButton />
             </Col>
           </Row>

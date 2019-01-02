@@ -46,17 +46,17 @@ class Memos extends Component {
 
     var tmp = "";
     // メモ一覧をタグとして作成
-    var memos = memoList.map(memo => {
+    var memos = memoList.map( (memo, i) => {
 
       // 選択されているメモレベルのみを表示（0の場合は全て表示)
       if(memo.level === memoListLevel || memoListLevel === 0){
 
         // \nをa<br>に
         tmp = memo.memo.split("\n").map( m => {
-          return <span>{m}<br /></span>
+          return <span key={i}>{m}<br /></span>
         });
 
-        return <p style={memoStyle} >{tmp}</p>
+        return <p style={memoStyle} key={i}>{tmp}</p>
       }
 
     });

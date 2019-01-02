@@ -38,13 +38,13 @@ class LevelSelectButton extends Component{
     return(
       <div>
         <Row>
-          <Col xs="4" style={colStyle}>
+          <Col xs={4} style={colStyle}>
             <button style={buttonStyle(1, memoListLevel)} onClick={e => this.props.changeMemoListLevel(1)}>1</button>
           </Col>
-          <Col xs="4" style={colStyle}>
+          <Col xs={4} style={colStyle}>
             <button style={buttonStyle(2, memoListLevel)} onClick={e => this.props.changeMemoListLevel(2)}>2</button>
           </Col>
-          <Col xs="4" style={colStyle}>
+          <Col xs={4} style={colStyle}>
             <button style={buttonStyle(3, memoListLevel)} onClick={e => this.props.changeMemoListLevel(3)}>3</button>
           </Col>
         </Row>

@@ -44,9 +44,9 @@ class LevelCircle extends Component{
     // memoWriteLevelより小さかったら色を加える
     for(var i = 1; i <= 3; i++){
       if(i <= memoWriteLevel){
-        circleP.push(<Col xs={4} style={colStyle}><p style={pStyle(true)}></p></Col>)
+        circleP.push(<Col xs={4} style={colStyle} key={i}><p style={pStyle(true)}></p></Col>)
       }else{
-        circleP.push(<Col xs={4} style={colStyle}><p style={pStyle(false)}></p></Col>)
+        circleP.push(<Col xs={4} style={colStyle} key={i}><p style={pStyle(false)}></p></Col>)
       }
     }
 
