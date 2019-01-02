@@ -23,4 +23,24 @@ export default {
       memoList: memoList
     };
   },
+
+  changeMemoListLevel: async (level) => {
+    // 現在のレベルを取得
+    var oldLevel = store.getState().memoListLevel;
+    // ボタンを押した後のレベルを入れる
+    var newLevel
+
+    // 押されたボタンが現在選択されているレベルなら0にする
+    if(oldLevel === level){
+      newLevel = 0;
+    }else{
+      newLevel = level;
+    }
+
+    console.log("level", newLevel);
+    return {
+      type: action.CHANGE_LEVEL,
+      memoListLevel: newLevel,
+    }
+  }
 }

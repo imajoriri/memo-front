@@ -39,7 +39,7 @@ export default {
     }
 
     return {
-      type: action.PLUS_LEVEL,
+      type: action.MINUS_LEVEL,
       newMemoWriteLevel: newMemoWriteLevel,
     }
   },

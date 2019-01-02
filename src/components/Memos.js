@@ -42,17 +42,23 @@ class Memos extends Component {
 
   render(){
     var memoList = store.getState().memoList;
+    var memoListLevel = store.getState().memoListLevel;
 
     var tmp = "";
     // メモ一覧をタグとして作成
     var memos = memoList.map(memo => {
 
-      // \nをa<br>に
-      tmp = memo.memo.split("\n").map( m => {
-        return <span>{m}<br /></span>
-      });
+      // 選択されているメモレベルのみを表示（0の場合は全て表示)
+      if(memo.level === memoListLevel || memoListLevel === 0){
 
-      return <p style={memoStyle} >{tmp}</p>
+        // \nをa<br>に
+        tmp = memo.memo.split("\n").map( m => {
+          return <span>{m}<br /></span>
+        });
+
+        return <p style={memoStyle} >{tmp}</p>
+      }
+
     });
 
     return(

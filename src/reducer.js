@@ -3,7 +3,8 @@ import action from "./actions/action";
 const initialState = {
   memoWriteLevel: 1,
   memo: "",
-  memoList: []
+  memoList: [],
+  memoListLevel: 0, // 0: 全て, 1~
 } 
 
 function reducer(state = initialState, act) {
@@ -16,6 +17,7 @@ function reducer(state = initialState, act) {
       });
 
     case action.PLUS_LEVEL:
+    case action.MINUS_LEVEL:
       return Object.assign({},state, {
         memoWriteLevel: act.newMemoWriteLevel
       });
@@ -31,6 +33,10 @@ function reducer(state = initialState, act) {
         memoList: act.memoList,
       });
 
+    case action.CHANGE_LEVEL:
+      return Object.assign({},state, {
+        memoListLevel: act.memoListLevel,
+      });
 
     default:
       return state;
