@@ -7,19 +7,17 @@ import memoList from "./../actions/memoList";
 
 var buttonStyle = (key, memoListLevel) => {
   var result = {
-    border: "black solid 1px",
+    border: "#B3B3B3 solid 1px",
+    borderRadius: "30% / 50%",
     backgroundColor: "white",
-    width: "100%",
+    width: "90%",
     height: "40px",
-  }
-
-  if(key !== 3){
-    result.borderRight = "none"
+    opacity: "0.7",
   }
 
   // 選択されているボタンの色を変える
   if(key === memoListLevel){
-    result.backgroundColor = "blue";
+    result.backgroundColor = "#00F5A4";
   }
   return result;
 }
@@ -38,15 +36,28 @@ class LevelSelectButton extends Component{
     return(
       <div>
         <Row>
+
           <Col xs={4} style={colStyle}>
-            <button style={buttonStyle(1, memoListLevel)} onClick={e => this.props.changeMemoListLevel(1)}>1</button>
+            <button style={buttonStyle(1, memoListLevel)} 
+              onClick={e => this.props.changeMemoListLevel(1)}>
+              1
+            </button>
           </Col>
+
           <Col xs={4} style={colStyle}>
-            <button style={buttonStyle(2, memoListLevel)} onClick={e => this.props.changeMemoListLevel(2)}>2</button>
+            <button style={buttonStyle(2, memoListLevel)} 
+              onClick={e => this.props.changeMemoListLevel(2)}>
+              2
+            </button>
           </Col>
+
           <Col xs={4} style={colStyle}>
-            <button style={buttonStyle(3, memoListLevel)} onClick={e => this.props.changeMemoListLevel(3)}>3</button>
+            <button style={buttonStyle(3, memoListLevel)} 
+              onClick={e => this.props.changeMemoListLevel(3)}>
+              3
+            </button>
           </Col>
+
         </Row>
       </div>
     )

@@ -5,8 +5,9 @@ import { Row, Col } from 'react-bootstrap';
 import registerMemo from "./../actions/registerMemo";
 
 var buttonStyle = {
-  border: "black solid 1px",
-  backgroundColor: "white",
+  border: "white solid 1px",
+    borderRadius: "20% / 50%",
+  backgroundColor: "#00DC94",
   width: "100%",
   height: "40px",
 }

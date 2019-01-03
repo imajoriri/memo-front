@@ -23,9 +23,8 @@ class InputForm extends Component{
         <Row>
           <Col xs={12} xsOffset={0}>
             <form>
-              <textarea style={inputStyle} 
-                value={this.props.state.memo}
-                onChange={(e) => this.props.onChange(e)}/>
+              {/* <textarea style={inputStyle} value={this.props.state.memo} onChange={(e) => this.props.onChange(e)}/> */}
+              <textarea style={inputStyle} id="memoInput"/>
             </form>
           </Col>
         </Row>

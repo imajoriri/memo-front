@@ -16,7 +16,7 @@ var pStyle = isChecked => {
   if(isChecked){
     style.backgroundColor = "#00DC94";
   }else{
-    style.backgroundColor = "#CCCCCC";
+    style.backgroundColor = "rgb(243, 238, 238)";
   }
 
   return style;

@@ -63,10 +63,17 @@ export default {
 
     var state = store.getState();
 
-    if(state.memo){
+    // var memo = state.memo
+
+    // stateにmemoを保存しておくと日本語入力が不可
+    var memo = document.getElementById("memoInput").value;
+    document.getElementById("memoInput").value = "";
+    console.log(memo)
+
+    if(memo){
       // DBに保存
       firebaseDb.child(todayKey).child(timeKey).set({
-        memo: state.memo,
+        memo: memo,
         level: state.memoWriteLevel,
         timeKey: timeKey,
       })

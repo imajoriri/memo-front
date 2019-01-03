@@ -8,9 +8,13 @@ import InputForm from "./components/InputForm";
 import SendButton from "./components/SendButton";
 import LevelSelectButton from "./components/LevelSelectButton";
 import Memos from "./components/Memos";
+import Footer from "./components/Footer";
 
 var allGroupStyle = {
-  padding: "10px",
+  fontSize: "20px",
+  padding: "0px",
+  position: "relative",
+  height: "100%",
 }
 
 var LevelShiftGroupStyle = {
@@ -18,8 +22,12 @@ var LevelShiftGroupStyle = {
   textAlign: "center",
 }
 var InputFormGroupStyle = {
+  padding: "0px 10px",
 }
 var LevelSelectGroupStyle = {
+}
+var ButtonGroupStyle = {
+  margin: "10px 0px",
 }
 var SendButtonColStyle = {
   paddingRight: "0",
@@ -50,7 +58,7 @@ class App extends Component {
           </Row>
 
           {/* 表示するメモのレベル変更ボタン */}
-          <Row className="ButtonGroup">
+          <Row className="ButtonGroup" style={ButtonGroupStyle}>
             <Col xs={8}>
                 <LevelSelectButton />
             </Col>
@@ -65,6 +73,7 @@ class App extends Component {
           </Row>
 
         </Grid>
+        <Footer />
       </div>
     );
   }

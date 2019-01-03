@@ -10,14 +10,14 @@ var memoDivStyle = {
 
 const memoStyle = isLast => {
   var style = {
-    border: "black solid 1px",
+    borderTop: "#CCCCCC solid 1px",
     borderBottom: "none",
     padding: "5px",
     margin: "0px",
   }
 
   if(isLast){
-    style.borderBottom = "black solid 1px"
+    style.borderBottom = "#CCCCCC solid 1px"
   }
 
   return style;
