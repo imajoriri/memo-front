@@ -12,7 +12,7 @@ self.__precacheManifest = [
     "url": "/memo-front/static/js/1.321bb26e.chunk.js"
   },
   {
-    "revision": "c0012861ff66a6804ebd8b63e1038174",
+    "revision": "8b055834af3c8ea608ef0c41eba795a8",
     "url": "/memo-front/index.html"
   }
 ];
