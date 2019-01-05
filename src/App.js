@@ -41,35 +41,39 @@ class App extends Component {
 
           {/* 画面上のメモレベル変更の丸いボタン */}
           <Row style={LevelShiftGroupStyle} className="LevelShiftGroup">
-            <Col md={6} xs={4}>
+            <Col mdOffset={3} md={2} xs={4}>
               <LevelShiftButton isPlusButton={false}/>
             </Col>
-            <Col xs={4}>
+            <Col md={2} xs={4}>
               <LevelLine />
             </Col>
-            <Col md={6} xs={4} >
+            <Col md={2} xs={4} >
               <LevelShiftButton isPlusButton={true}/>
             </Col>
           </Row>
 
           {/* メモ入力フォーム*/}
           <Row style={InputFormGroupStyle} className="InputFormGroup">
-            <InputForm />
+            <Col mdOffset={3} md={6}>
+              <InputForm />
+            </Col>
           </Row>
 
           {/* 表示するメモのレベル変更ボタン */}
           <Row className="ButtonGroup" style={ButtonGroupStyle}>
-            <Col xs={8}>
+            <Col mdOffset={3} md={2} xs={8}>
                 <LevelSelectButton />
             </Col>
-            <Col xs={4} style={SendButtonColStyle}>
+            <Col mdOffset={3} md={1} xs={4} style={SendButtonColStyle}>
               <SendButton />
             </Col>
           </Row>
 
           {/* メモ一覧 */}
           <Row className="MemosGroup">
-            <Memos />
+            <Col mdOffset={3} md={6}>
+              <Memos />
+            </Col>
           </Row>
 
         </Grid>
